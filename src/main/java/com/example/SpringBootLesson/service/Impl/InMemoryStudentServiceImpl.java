@@ -13,14 +13,10 @@ import java.util.List;
 public class InMemoryStudentServiceImpl  implements StudentService {
 
     private final InMemoryStudentDAO repository;
+
     @Override
     public List<Student> findAllStudents() {
-        return List.of(
-                Student.builder().firstName("Oleg").email("oleg12@gmail.com").age(41).build(),
-                Student.builder().firstName("Григорий").email("vasya12@gmail.com").age(51).build(),
-                Student.builder().firstName("Anna").email("anya18@gmail.com").age(38).build(),
-                Student.builder().firstName("Eugene").email("eugene4t4@yahoo.com").age(42).build()
-        );
+        return repository.findAllStudents();
     }
 
     @Override

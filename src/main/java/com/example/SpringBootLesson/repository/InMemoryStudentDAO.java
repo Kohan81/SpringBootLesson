@@ -12,7 +12,7 @@ public class InMemoryStudentDAO {
 
     private final List<Student> STUDENTS = new ArrayList<Student>();
 
-    List<Student> findAllStudents() {
+    public List<Student> findAllStudents() {
         return STUDENTS;
     }
 
