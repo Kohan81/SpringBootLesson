@@ -1,19 +1,22 @@
 package com.example.SpringBootLesson.model;
 
-import lombok.Builder;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NonNull;
 
 import java.time.LocalDate;
 
 @Data
-@Builder
+@Entity
 public class Student {
 
+    @Id
+    @GeneratedValue
+    private long id;
     private String firstName;
     private String lastName;
+    @Transient
     private int age;
-    @NonNull
+    @Column(unique = true)
     private String email;
     private LocalDate dob;
 }
